@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>201733261003 - grid02.html</title>
+<style>
+.item1 { grid-area: header; }   /* item1 isminde sınıf oluşturduk. Grid alanı tanımlaması yaptık. */
+.item2 { grid-area: menu; }     /* item2 adında class oluşturduk. Grid için alan oluşturup tanımlamasını yaptık. */
+.item3 { grid-area: main; }     /* item3 isminde sınıf oluşturduk. Grid alanı 'main' olarak belirttik. */
+.item4 { grid-area: right; }    /* item4 adında class meydana getirdik. Grid alanı oluşturduk. */
+.item5 { grid-area: footer; }   /* item5 isminde sınıf yaptık. Grid alanı 'footer' adını verdik. */
+
+/* Grid Paneli oluşturduk. tüm itemleri bu panel altında topluyoruz. */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+/* Grid paneli içerisinde yer alan tüm div etiketlerine özel ayar yapılandırıyoruz. */
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/* Dropdown panelini tasarlıyoruz. */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Gizli dropdown panelini oluşturuyoruz. */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Bu dropdown panelde bulunan tüm linkler aşağıdaki kurallara uyacak. */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Bu dropdown paneldeki linklerin birinin üstüne gelince seçili link farklı görünüme sahip olacak. */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Belirtilen elementler içerisinde mouse mevcut ise, dropdown kaybolmasın. */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Programlama Dilleri linki üstüne mouse gelince arkaplan rengi değişsin. */
+.dropdown:hover .dropbtn {
+  background-color: #94c6ec;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Izgara Arayüzü</h1>
+
+<p>Bu arayüz 3x6 formatında hazırlanmıştır.</p>
+
+<div class="grid-container">
+  <div class="item1">Başlık</div>
+  <div class="item2 dropdown">
+        <div class="dropbtn">Programlama Dilleri</div>
+        <div class="dropdown-content">
+            <a href="#">Python</a>
+            <a href="#">PHP</a>
+            <a href="#">C</a>
+            <a href="#">Java</a>
+            <a href="#">C++</a>
+            <a href="#">C#</a>
+            <a href="#">Javascript</a>
+        </div>
+  </div>
+  <div class="item3">
+        <p>Bilgisayar Teknolojisi ve Bilişim Sistemleri, bilgisayar ve sağladığı avantajların diğer sektörlere uyarlanması, sektörün sahip olduğu sorunları çözerek kullanılan her türlü cihazın, ağların, yazılım dillerinin ve veritabanlarının incelenmesi ve kullanılmak üzere eğitimi verilmekte olan akademik bir disiplindir.</p>
+        <p>Lisans bölümü öğrencileri; programlama, ağ oluşturma, sistem yönetimi ve internet geliştirme uygulamalarına hazırlar. Bilgi sistemlerinde incelenen teknolojiler arasında programlama, ağ oluşturma, sunucu yönetimi, bilgi güvenliği, veritabanı tasarımı ve geliştirme, sistem analizi ve tasarımı ve web geliştirme yer almaktadır.</p> 
+    </div>  
+  <div class="item4">
+      <img src="resimler/pc_teknolojileri.jpg" style="width: 100%;"/>
+  </div>
+  <div class="item5">Bize Ulaşın</div>
+</div>
+
+</body>
+</html>

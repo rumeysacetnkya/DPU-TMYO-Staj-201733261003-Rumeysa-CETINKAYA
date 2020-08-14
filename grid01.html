@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>201733261003 - grid01.html</title>
+<style>
+.item1 { grid-area: header; }   /* item1 isminde sınıf oluşturduk. Grid alanı tanımlaması yaptık. */
+.item2 { grid-area: menu; }     /* item2 adında class oluşturduk. Grid için alan oluşturup tanımlamasını yaptık. */
+.item3 { grid-area: main; }     /* item3 isminde sınıf oluşturduk. Grid alanı 'main' olarak belirttik. */
+.item4 { grid-area: right; }    /* item4 adında class meydana getirdik. Grid alanı oluşturduk. */
+.item5 { grid-area: footer; }   /* item5 isminde sınıf yaptık. Grid alanı 'footer' adını verdik. */
+
+/* Grid Paneli oluşturduk. tüm itemleri bu panel altında topluyoruz. */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+/* Grid paneli içerisinde yer alan tüm div etiketlerine özel ayar yapılandırıyoruz. */
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>Izgara Arayüzü</h1>
+
+<p>Bu arayüz 3x6 formatında hazırlanmıştır.</p>
+
+<div class="grid-container">
+  <div class="item1">Başlık</div>
+  <div class="item2">Navigasyon</div>
+  <div class="item3">İçerik</div>  
+  <div class="item4">Reklam Alanı</div>
+  <div class="item5">Bize Ulaşın</div>
+</div>
+
+</body>
+</html>

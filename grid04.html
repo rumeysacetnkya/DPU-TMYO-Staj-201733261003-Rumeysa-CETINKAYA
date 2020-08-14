@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>201733261003 - grid04.html</title>
+<style>
+.item1 { grid-area: header; }     /* item1 isminde sınıf oluşturduk. Grid alanı tanımlaması yaptık. */
+.item2 { grid-area: menu; }       /* item2 adında class oluşturduk. Grid için alan oluşturup tanımlamasını yaptık. */
+.item3 { grid-area: main; }       /* item3 isminde sınıf oluşturduk. Grid alanı 'main' olarak belirttik. */
+.item4 { grid-area: right; }      /* item4 adında class meydana getirdik. Grid alanı oluşturduk. */
+.ogr-no { grid-area: ogr;}        /* ogr-no adında sınıf tanımladık. Grid adı: ogr şeklinde tanımlandı. */
+.bolum-adi { grid-area: bolum; }  /* bolum-adi isminde class oluşturuldu. bolum olarak değer girildi. */
+.okul-adi { grid-area: okul; }    /* okul-adi adında sınıf tanımlandı. Grid alanı tanımlaması yapıldı. */
+.uni-adi { grid-area: uni; }      /* uni-adi isminde class tanımlandı. Grid alanı 'uni' olarak belirlendi. */
+
+/* Grid Paneli oluşturduk. tüm itemleri bu panel altında topluyoruz. */
+.grid-container {
+  display: grid;
+  grid-template-areas:'header header header header header header''menu main main main right right''menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+/* Grid paneli içerisinde yer alan tüm div etiketlerine özel ayar yapılandırıyoruz. */
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/* ul etiketindeki list classına tanımlama yapıyoruz. */
+ul.list {
+  text-align: left;
+  list-style: none;
+}
+
+/* ul etiketindeki list classındaki a etiketine renk atıyoruz. */
+ul.list a {
+  color: #000;
+}
+
+/* 1. Alan Başlangıcı */
+@media screen and (max-width: 499px) {
+    .grid-container {
+        grid-template-areas:'menu''header''right''main''uni''okul''bolum''ogr';
+    }
+
+    /* Dropdown panelini tasarlıyoruz. */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Gizli dropdown panelini oluşturuyoruz. */
+    .dropdown-content {
+      display: none;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Bu dropdown panelde bulunan tüm linkler aşağıdaki kurallara uyacak. */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    /* Bu dropdown paneldeki linklerin birinin üstüne gelince seçili link farklı görünüme sahip olacak. */
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    /* Belirtilen elementler içerisinde mouse mevcut ise, dropdown kaybolmasın. */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover ul.list {
+      height: 300px;
+    }
+
+    /* Programlama Dilleri linki üstüne mouse gelince arkaplan rengi değişsin. */
+    .dropdown:hover .dropbtn {
+      background-color: #94c6ec;
+    }
+}
+/* 1. Alan Sonu */
+
+/* 2. Alan Başlangıcı */
+@media screen and (min-width: 500px) {
+  .grid-container {
+      grid-template-areas:'header header header header header header''menu main main main right right''ogr bolum okul okul uni uni';
+  }
+}
+/* 2. Alan Sonu */
+
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="item1">Rumeysa Çetinkaya</div>
+  <div class="item2 dropdown">
+    <div class="dropbtn">Liste</div>
+    <ul class="list dropdown-content">
+      <li><a href="#">Bilgisayar</a></li>
+      <li><a href="#">İnternet</a></li>
+      <li><a href="#">Donanım</a></li>
+      <li><a href="#">Yazılım</a></li>
+    </ul>
+  </div>
+  <div class="item3">
+        <p>Bilgisayar Teknolojisi ve Bilişim Sistemleri, bilgisayar ve sağladığı avantajların diğer sektörlere uyarlanması, sektörün sahip olduğu sorunları çözerek kullanılan her türlü cihazın, ağların, yazılım dillerinin ve veritabanlarının incelenmesi ve kullanılmak üzere eğitimi verilmekte olan akademik bir disiplindir.</p>
+        <p>Lisans bölümü öğrencileri; programlama, ağ oluşturma, sistem yönetimi ve internet geliştirme uygulamalarına hazırlar. Bilgi sistemlerinde incelenen teknolojiler arasında programlama, ağ oluşturma, sunucu yönetimi, bilgi güvenliği, veritabanı tasarımı ve geliştirme, sistem analizi ve tasarımı ve web geliştirme yer almaktadır.</p> 
+    </div>  
+  <div class="item4">
+      <img src="resimler/pc_teknolojileri.jpg" style="width: 100%;"/>
+  </div>
+  <div class="ogr-no">201733261003</div>
+  <div class="bolum-adi">İAT</div>
+  <div class="okul-adi">Tavşanlı MYO</div>
+  <div class="uni-adi">Kütahya Dumlupınar Üniversitesi</div>
+</div>
+
+</body>
+</html>
